@@ -1,0 +1,19 @@
+<!--
+  @description       : 
+  @author            : NiyogAethereus
+  @group             : 
+  @last modified on  : 02-27-2023
+  @last modified by  : NiyogAethereus
+-->
+<template>
+    <lightning-card title="Create Record" variant="narrow" icon-name="standard:identifier">
+        <template if:true={objectName}>
+
+            <template for:each={fieldOptions} for:item="field">
+                <lightning-input key={field.value} type="text" label={field.label} value={field.value} onchange={handleInputChange}></lightning-input>
+            </template>
+
+            <lightning-button label="Save" variant="brand" onclick={handleSave}></lightning-button>
+        </template>
+    </lightning-card>
+</template>
